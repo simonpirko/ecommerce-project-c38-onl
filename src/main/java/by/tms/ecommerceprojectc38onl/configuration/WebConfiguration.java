@@ -1,5 +1,6 @@
 package by.tms.ecommerceprojectc38onl.configuration;
 
+import org.flywaydb.core.Flyway;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -66,5 +67,14 @@ public class WebConfiguration implements WebMvcConfigurer {
         dataSource.setUsername(env.getProperty("datasource.username"));
         dataSource.setPassword(env.getProperty("datasource.password"));
         return dataSource;
+    }
+
+    @Bean(initMethod = "migrate")
+    public Flyway flyway(DataSource dataSource) {
+        return Flyway.configure()
+                .dataSource(dataSource)
+                .locations("classpath:db/migration")
+                .baselineOnMigrate(true)
+                .load();
     }
 }
