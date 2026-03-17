@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ошибка</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container vh-100 d-flex justify-content-center align-items-center">
+    <div class="card shadow-sm border-0 text-center p-5" style="max-width: 500px;">
+        <div class="card-body">
+            <h2 class="card-title fw-bold mb-3">Произошла ошибка</h2>
+
+            <p class="card-text text-secondary fs-5" th:text="${errorMessage}">
+                Что-то пошло не так...
+            </p>
+
+            <div class="badge bg-secondary-subtle text-secondary fw-normal p-2 mb-4" th:if="${errorCode}">
+                Код ошибки: <span th:text="${errorCode}"></span>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
