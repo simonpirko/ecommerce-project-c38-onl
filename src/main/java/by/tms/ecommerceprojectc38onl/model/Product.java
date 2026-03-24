@@ -1,8 +1,6 @@
 package by.tms.ecommerceprojectc38onl.model;
 
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,11 +12,13 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Product {
+    @Positive
     private Long id;
+
+    @Positive
     private Long sellerId;
 
-    @NotNull(message = "СategoryId is required for update")
-    @Positive(message = "СategoryId must be positive")
+    @Positive
     private Long categoryId;
 
     @NotBlank
