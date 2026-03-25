@@ -1,7 +1,7 @@
 package by.tms.ecommerceprojectc38onl.model;
 
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,23 +12,24 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Product {
+    @Positive
     private Long id;
+
+    @Positive
     private Long sellerId;
+
+    @Positive
     private Long categoryId;
 
-    @NotEmpty
     @NotBlank
     private String name;
 
-    @NotEmpty
     @NotBlank
     private String description;
 
-    @NotEmpty
     @NotBlank
     private BigDecimal price;
 
-    @NotEmpty
     @NotBlank
     private Integer quantity;
 }
