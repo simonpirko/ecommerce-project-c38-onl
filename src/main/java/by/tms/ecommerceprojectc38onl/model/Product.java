@@ -1,6 +1,7 @@
 package by.tms.ecommerceprojectc38onl.model;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,11 +16,11 @@ public class Product {
     @Positive
     private Long id;
 
-    @Positive
-    private Long sellerId;
+    @NotNull
+    private SellerInfo sellerInfo;
 
-    @Positive
-    private Long categoryId;
+    @NotNull
+    private Category category;
 
     @NotBlank
     private String name;

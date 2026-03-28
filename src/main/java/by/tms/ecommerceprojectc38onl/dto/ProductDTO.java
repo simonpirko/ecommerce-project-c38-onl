@@ -2,7 +2,10 @@ package by.tms.ecommerceprojectc38onl.dto;
 
 import by.tms.ecommerceprojectc38onl.validation.OnCreate;
 import by.tms.ecommerceprojectc38onl.validation.OnUpdate;
-import jakarta.validation.constraints.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.PositiveOrZero;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
