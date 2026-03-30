@@ -1,4 +1,4 @@
-package by.tms.ecommerceprojectc38onl.model;
+package by.tms.ecommerceprojectc38onl.dto;
 
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
@@ -8,21 +8,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Review {
-    @NotNull
-    private Long id;
-
-    @NotNull
-    private User user;
-
-    @NotNull
-    private Product product;
-
+public class ReviewDTO {
     @NotBlank
     private String comment;
 
@@ -30,7 +19,4 @@ public class Review {
     @Min(1)
     @Max(5)
     private Integer rating;
-
-    @NotNull
-    private LocalDateTime createdAt;
 }
