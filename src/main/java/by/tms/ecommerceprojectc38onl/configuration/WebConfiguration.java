@@ -61,7 +61,7 @@ public class WebConfiguration implements WebMvcConfigurer {
 
     @Bean
     public DataSource dataSource() {
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        BasicDataSource dataSource = new BasicDataSource();
         dataSource.setDriverClassName("org.postgresql.Driver");
         dataSource.setUrl(env.getProperty("datasource.url"));
         dataSource.setUsername(env.getProperty("datasource.username"));
